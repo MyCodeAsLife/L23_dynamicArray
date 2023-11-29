@@ -47,7 +47,6 @@ namespace L23_dynamicArray
                         break;
 
                     default:
-
                         mainArray[mainArray.Length - 1] = Convert.ToInt32(userInput);
                         int[] tempArray = new int[mainArray.Length + 1];
 
