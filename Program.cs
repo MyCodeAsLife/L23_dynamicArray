@@ -42,6 +42,7 @@ namespace L23_dynamicArray
                             sumElements += mainArray[i];
                             Console.Write(mainArray[i] + " ");
                         }
+
                         Console.WriteLine($"\n\nСумма всех введеных чисел: {sumElements}");
                         Console.ReadKey();
                         break;
@@ -54,6 +55,7 @@ namespace L23_dynamicArray
                         {
                             tempArray[i] = mainArray[i];
                         }
+
                         mainArray = tempArray;
                         break;
                 }
