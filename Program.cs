@@ -37,10 +37,10 @@ namespace L23_dynamicArray
                         Console.WriteLine("Массив введеных пользователем значений:");
                         sumElements = 0;
 
-                        foreach (var item in mainArray)
+                        for (int i = 0; i < mainArray.Length - 1; i++)
                         {
-                            sumElements += item;
-                            Console.Write(item + " ");
+                            sumElements += mainArray[i];
+                            Console.Write(mainArray[i] + " ");
                         }
                         Console.WriteLine($"\n\nСумма всех введеных чисел: {sumElements}");
                         Console.ReadKey();
@@ -48,22 +48,14 @@ namespace L23_dynamicArray
 
                     default:
 
-                        if (mainArray[0] == 0)
-                        {
-                            mainArray[0] = Convert.ToInt32(userInput);
-                        }
-                        else
-                        {
-                            int[] tempArray = new int[mainArray.Length + 1];
+                        mainArray[mainArray.Length - 1] = Convert.ToInt32(userInput);
+                        int[] tempArray = new int[mainArray.Length + 1];
 
-                            for (int i = 0; i < mainArray.Length; i++)
-                            {
-                                tempArray[i] = mainArray[i];
-                            }
-
-                            mainArray = tempArray;
-                            mainArray[mainArray.Length - 1] = Convert.ToInt32(userInput);
+                        for (int i = 0; i < mainArray.Length; i++)
+                        {
+                            tempArray[i] = mainArray[i];
                         }
+                        mainArray = tempArray;
                         break;
                 }
             }
