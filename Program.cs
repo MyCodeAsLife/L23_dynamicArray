@@ -13,7 +13,7 @@ namespace L23_dynamicArray
             const string CommandExit = "exit";
             const string CommandSum = "sum";
 
-            int[] mainArray = new int[1];
+            int[] numbers = new int[0];
             string userInput;
             bool isOpen = true;
 
@@ -36,10 +36,10 @@ namespace L23_dynamicArray
                         Console.WriteLine("Массив введеных пользователем значений:");
                         int sum = 0;
 
-                        for (int i = 0; i < mainArray.Length - 1; i++)
+                        for (int i = 0; i < numbers.Length; i++)
                         {
-                            sum += mainArray[i];
-                            Console.Write(mainArray[i] + " ");
+                            sum += numbers[i];
+                            Console.Write(numbers[i] + " ");
                         }
 
                         Console.WriteLine($"\n\nСумма всех введеных чисел: {sum}");
@@ -47,15 +47,15 @@ namespace L23_dynamicArray
                         break;
 
                     default:
-                        mainArray[mainArray.Length - 1] = Convert.ToInt32(userInput);
-                        int[] tempArray = new int[mainArray.Length + 1];
+                        int[] tempArray = new int[numbers.Length + 1];
 
-                        for (int i = 0; i < mainArray.Length; i++)
+                        for (int i = 0; i < numbers.Length; i++)
                         {
-                            tempArray[i] = mainArray[i];
+                            tempArray[i] = numbers[i];
                         }
 
-                        mainArray = tempArray;
+                        numbers = tempArray;
+                        numbers[numbers.Length - 1] = Convert.ToInt32(userInput);
                         break;
                 }
             }
