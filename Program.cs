@@ -14,7 +14,6 @@ namespace L23_dynamicArray
             const string CommandSum = "sum";
 
             int[] mainArray = new int[1];
-            int sumElements;
             string userInput;
             bool isOpen = true;
 
@@ -35,15 +34,15 @@ namespace L23_dynamicArray
                     case CommandSum:
                         Console.Clear();
                         Console.WriteLine("Массив введеных пользователем значений:");
-                        sumElements = 0;
+                        int sum = 0;
 
                         for (int i = 0; i < mainArray.Length - 1; i++)
                         {
-                            sumElements += mainArray[i];
+                            sum += mainArray[i];
                             Console.Write(mainArray[i] + " ");
                         }
 
-                        Console.WriteLine($"\n\nСумма всех введеных чисел: {sumElements}");
+                        Console.WriteLine($"\n\nСумма всех введеных чисел: {sum}");
                         Console.ReadKey();
                         break;
 
